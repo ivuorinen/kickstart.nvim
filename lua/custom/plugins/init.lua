@@ -16,6 +16,15 @@ return {
       auto = true,
     },
   },
+  -- Toggle nvim color theme when macOS color scheme changes
+  -- https://github.com/cormacrelf/dark-notify
+  {
+    'cormacrelf/dark-notify',
+    init = function()
+      local dn = require 'dark_notify'
+      dn.run()
+    end,
+  },
   -- Clarify and beautify your comments using boxes and lines.
   -- https://github.com/LudoPinelli/comment-box.nvim
   { 'LudoPinelli/comment-box.nvim', opts = {} },
