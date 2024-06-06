@@ -20,11 +20,17 @@ return {
   -- https://github.com/cormacrelf/dark-notify
   {
     'cormacrelf/dark-notify',
+    dependencies = {
+      'catppuccin/nvim',
+    },
+    lazy = false,
+    enabled = true,
+    priority = 1001,
     init = function()
       local dn = require 'dark_notify'
       dn.run {
         schemes = {
-          dark = 'catppuccin-machiato',
+          dark = 'catppuccin-macchiato',
           light = 'catppuccin-latte',
         },
       }

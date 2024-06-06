@@ -639,11 +639,23 @@ require('lazy').setup({
           dark = 'macchiato',
           light = 'latte',
         },
+        term_colors = true,
+        integrations = {
+          mason = true,
+          notify = true,
+          neotree = true,
+          fidget = true,
+          which_key = true,
+          cmp = true,
+          gitsigns = true,
+          nvimtree = true,
+          treesitter = true,
+        },
       }
       vim.cmd.colorscheme 'catppuccin'
 
       -- You can configure highlights by doing something like:
-      vim.cmd.hi 'Comment gui=none'
+      -- vim.cmd.hi 'Comment gui=none'
     end,
     opts = {
       transparent = true,
