@@ -22,7 +22,12 @@ return {
     'cormacrelf/dark-notify',
     init = function()
       local dn = require 'dark_notify'
-      dn.run()
+      dn.run {
+        schemes = {
+          dark = 'catppuccin-machiato',
+          light = 'catppuccin-latte',
+        },
+      }
     end,
   },
   -- Clarify and beautify your comments using boxes and lines.
