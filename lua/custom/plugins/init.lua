@@ -1,7 +1,7 @@
--- You can add your own plugins here or in other files in this directory!
---  I promise not to create any merge conflicts in this directory :)
 --
--- See the kickstart.nvim README for more information
+--          ╭─────────────────────────────────────────────────────────╮
+--          │   See the kickstart.nvim README for more information    │
+--          ╰─────────────────────────────────────────────────────────╯
 return {
   -- Describe the regexp under the cursor
   -- https://github.com/bennypowers/nvim-regexplainer
@@ -32,7 +32,25 @@ return {
   },
   -- Clarify and beautify your comments using boxes and lines.
   -- https://github.com/LudoPinelli/comment-box.nvim
-  { 'LudoPinelli/comment-box.nvim', opts = {} },
+  {
+    'LudoPinelli/comment-box.nvim',
+    opts = {},
+    init = function()
+      local wk = require 'which-key'
+
+      wk.register {
+        ['<Leader>'] = {
+          c = {
+            b = { '<Cmd>CBccbox<CR>', 'CommentBox: Box Title' },
+            t = { '<Cmd>CBllline<CR>', 'CommentBox: Titled Line' },
+            l = { '<Cmd>CBline<CR>', 'CommentBox: Simple Line' },
+            m = { '<Cmd>CBllbox14<CR>', 'CommentBox: Marked' },
+            d = { '<Cmd>CBd<CR>', 'Remove a box' },
+          },
+        },
+      }
+    end,
+  },
   { 'wakatime/vim-wakatime', lazy = false, enabled = true },
   -- Neotree configuration
   {
@@ -48,6 +66,9 @@ return {
             '.nvmrc',
             '.env',
             '.env.example',
+            '.*rc',
+            '.*.rc.*',
+            '.stylua.*',
           },
         },
       },
@@ -89,7 +110,7 @@ return {
     end,
     opts = {
       open_fold_hl_timeout = 150,
-      close_fold_kinds = { 'imports', 'comment' },
+      close_fold_kinds_for_ft = { 'imports', 'comment' },
       preview = {
         win_config = {
           border = { '', '─', '', '', '', '─', '', '' },
