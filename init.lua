@@ -6,6 +6,9 @@ vim.g.maplocalleader = ' '
 -- Set to true if you have a Nerd Font installed and selected in the terminal
 vim.g.have_nerd_font = true
 
+-- Make sure editorconfig support is enabled
+vim.g.editorconfig = true
+
 -- [[ Setting options ]]
 -- See `:help vim.opt`
 -- For more options, you can see `:help option-list`
@@ -303,6 +306,8 @@ require('lazy').setup({
         },
       },
 
+      'b0o/schemastore.nvim',
+
       -- Allows extra capabilities provided by nvim-cmp
       'hrsh7th/cmp-nvim-lsp',
     },
@@ -441,6 +446,14 @@ require('lazy').setup({
             },
           },
         },
+        jsonls = {
+          settings = {
+            json = {
+              schemas = require('schemastore').json.schemas(),
+              validate = { enable = true },
+            },
+          },
+        },
       }
 
       -- Ensure the servers and tools above are installed
@@ -455,9 +468,15 @@ require('lazy').setup({
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'stylua', -- Used to format Lua code
+        'ansiblels', -- Ansible
+        'docker_compose_language_service', -- Docker compose
+        'eslint', -- ESLint
+        'grammarly', -- Grammar and better writing
+        'html', -- HTML
         'intelephense', -- PHP
+        'stylua', -- Used to format Lua code
         'tailwindcss', -- Tailwind CSS
+        'terraformls', -- Terraform
         'yamlls', -- YAML
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed }
@@ -642,6 +661,7 @@ require('lazy').setup({
           dark = 'macchiato',
           light = 'latte',
         },
+        transparent_background = true,
         term_colors = true,
         integrations = {
           mason = true,
