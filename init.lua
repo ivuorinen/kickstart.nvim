@@ -30,8 +30,8 @@ vim.schedule(function()
   vim.opt.clipboard = 'unnamedplus'
 end)
 
--- Enable break indent
-vim.opt.breakindent = true
+vim.opt.breakindent = true -- Enable break indent
+vim.opt.smartindent = true -- Insert indents automatically
 
 -- Save undo history
 vim.opt.undofile = true
