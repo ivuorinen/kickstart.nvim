@@ -60,6 +60,7 @@ fork to your machine using one of the commands below, depending on your OS.
 > `https://github.com/<your_github_username>/kickstart.nvim.git`
 
 #### Clone kickstart.nvim
+
 > **NOTE**
 > If following the recommended step above (i.e., forking the repo), replace
 > `nvim-lua` with `<your_github_username>` in the commands below
@@ -131,7 +132,7 @@ examples of adding popularly requested plugins.
   * The main purpose of kickstart is to serve as a teaching tool and a reference
     configuration that someone can easily use to `git clone` as a basis for their own.
     As you progress in learning Neovim and Lua, you might consider splitting `init.lua`
-    into smaller parts. A fork of kickstart that does this while maintaining the 
+    into smaller parts. A fork of kickstart that does this while maintaining the
     same functionality is available here:
     * [kickstart-modular.nvim](https://github.com/dam9000/kickstart-modular.nvim)
   * Discussions on this topic can be found here:

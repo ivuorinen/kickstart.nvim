@@ -717,8 +717,31 @@ require('lazy').setup({
   { -- Highlight, edit, and navigate code
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
+    cmd = { 'TSUpdateSync', 'TSUpdate', 'TSInstall' },
     opts = {
-      ensure_installed = { 'bash', 'c', 'diff', 'html', 'lua', 'luadoc', 'markdown', 'vim', 'vimdoc' },
+      ensure_installed = {
+        'bash',
+        'c',
+        'diff',
+        'html',
+        'javascript',
+        'jsdoc',
+        'json',
+        'jsonc',
+        'lua',
+        'luadoc',
+        'markdown',
+        'python',
+        'query',
+        'regex',
+        'toml',
+        'tsx',
+        'typescript',
+        'vim',
+        'vimdoc',
+        'xml',
+        'yaml',
+      },
       -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
