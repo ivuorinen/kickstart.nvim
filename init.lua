@@ -27,8 +27,8 @@ vim.opt.showmode = false
 --  See `:help 'clipboard'`
 vim.opt.clipboard = 'unnamedplus'
 
--- Enable break indent
-vim.opt.breakindent = true
+vim.opt.breakindent = true -- Enable break indent
+vim.opt.smartindent = true -- Insert indents automatically
 
 -- Save undo history
 vim.opt.undofile = true
