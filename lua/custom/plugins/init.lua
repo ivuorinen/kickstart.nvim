@@ -40,7 +40,7 @@ return {
   {
     'cormacrelf/dark-notify',
     dependencies = {
-      'catppuccin/nvim',
+      'catppuccin',
     },
     lazy = false,
     enabled = true,
@@ -49,10 +49,17 @@ return {
       local dn = require 'dark_notify'
       dn.run {
         schemes = {
-          dark = 'catppuccin-macchiato',
-          light = 'catppuccin-latte',
+          dark = {
+            colorscheme = 'catppuccin-macchiato',
+            background = 'dark',
+          },
+          light = {
+            colorscheme = 'catppuccin-latte',
+            background = 'light',
+          },
         },
       }
+      dn.update()
     end,
   },
   -- Clarify and beautify your comments using boxes and lines.
