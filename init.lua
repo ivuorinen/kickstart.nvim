@@ -650,7 +650,7 @@ require('lazy').setup({
           dark = 'macchiato',
           light = 'latte',
         },
-        transparent_background = true,
+        transparent_background = false,
         term_colors = true,
         integrations = {
           mason = true,
