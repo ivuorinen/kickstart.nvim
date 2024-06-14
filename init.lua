@@ -293,7 +293,6 @@ require('lazy').setup({
       { 'williamboman/mason.nvim', config = true }, -- NOTE: Must be loaded before dependants
       'williamboman/mason-lspconfig.nvim',
       'WhoIsSethDaniel/mason-tool-installer.nvim',
-
       {
         'j-hui/fidget.nvim',
         opts = {
@@ -419,18 +418,26 @@ require('lazy').setup({
       --  - settings (table): Override the default settings passed when initializing the server.
       --        For example, to see the options for `lua_ls`, you could go to: https://luals.github.io/wiki/settings/
       local servers = {
-        -- clangd = {},
-        -- gopls = {},
-        -- pyright = {},
-        -- rust_analyzer = {},
-        -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
-        --
-        -- Some languages (like typescript) have entire language plugins that can be useful:
-        --    https://github.com/pmizio/typescript-tools.nvim
-        --
-        -- But for many setups, the LSP (`tsserver`) will work just fine
-        -- tsserver = {},
-        --
+        -- :help lspconfig-all for all pre-configured LSPs
+        actionlint = {}, -- GitHub Actions
+        ansiblels = {}, -- Ansible
+        docker_compose_language_service = {}, -- Docker compose
+        eslint = {}, -- ESLint
+        gitlab_ci_ls = {}, -- GitLab CI
+        grammarly = {}, -- Grammar and better writing
+        html = {}, -- HTML
+        intelephense = {}, -- PHP
+        jinja_lsp = {}, -- Jinja templates
+        shellcheck = {}, -- Shell scripts
+        snyk_ls = {}, -- All
+        stylua = {}, -- Used to format Lua code
+        tailwindcss = {}, -- Tailwind CSS
+        terraformls = {}, -- Terraform
+        typos_lsp = {}, -- Better writing
+        yamlls = {}, -- YAML
+        gopls = {},
+        pyright = {},
+        tsserver = {},
 
         lua_ls = {
           -- cmd = {...},
@@ -468,18 +475,11 @@ require('lazy').setup({
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
-        'ansiblels', -- Ansible
-        'docker_compose_language_service', -- Docker compose
-        'eslint', -- ESLint
-        'grammarly', -- Grammar and better writing
-        'html', -- HTML
-        'intelephense', -- PHP
-        'stylua', -- Used to format Lua code
-        'tailwindcss', -- Tailwind CSS
-        'terraformls', -- Terraform
-        'yamlls', -- YAML
+        'ansible-lint',
+        'bash-language-server',
+        'editorconfig-checker',
       })
-      require('mason-tool-installer').setup { ensure_installed = ensure_installed }
+      require('mason-tool-installer').setup { ensure_installed = ensure_installed, auto_update = true }
 
       require('mason-lspconfig').setup {
         handlers = {
