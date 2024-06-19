@@ -651,31 +651,10 @@ require('lazy').setup({
 
   { -- You can easily change to a different colorscheme.
     -- If you want to see what colorschemes are already installed, you can use `:Telescope colorscheme`.
-    'catppuccin/nvim',
-    name = 'catppuccin',
+    'folke/tokyonight.nvim',
     priority = 1000, -- Make sure to load this before all the other start plugins.
     init = function()
-      require('catppuccin').setup {
-        flavour = 'auto',
-        background = {
-          dark = 'macchiato',
-          light = 'latte',
-        },
-        transparent_background = false,
-        term_colors = true,
-        integrations = {
-          mason = true,
-          notify = true,
-          neotree = true,
-          fidget = true,
-          which_key = true,
-          cmp = true,
-          gitsigns = true,
-          nvimtree = true,
-          treesitter = true,
-        },
-      }
-      vim.cmd.colorscheme 'catppuccin'
+      vim.cmd.colorscheme 'tokyonight'
 
       -- You can configure highlights by doing something like:
       -- vim.cmd.hi 'Comment gui=none'
