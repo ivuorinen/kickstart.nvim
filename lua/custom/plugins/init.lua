@@ -40,23 +40,26 @@ return {
   {
     'cormacrelf/dark-notify',
     dependencies = {
-      'catppuccin',
+      'folke/tokyonight.nvim',
     },
     lazy = false,
     enabled = true,
     priority = 1001,
     init = function()
+      local wk = require 'which-key'
+      wk.register {
+        -- <leader>t = Toggle
+        ['<leader>tt'] = {
+          '<cmd>:lua require("dark_notify").toggle()<CR>',
+          'Toggle Dark Notify theme',
+        },
+      }
+
       local dn = require 'dark_notify'
       dn.run {
         schemes = {
-          dark = {
-            colorscheme = 'catppuccin-macchiato',
-            background = 'dark',
-          },
-          light = {
-            colorscheme = 'catppuccin-latte',
-            background = 'light',
-          },
+          dark = 'tokyonight-storm',
+          light = 'tokyonight-day',
         },
       }
       dn.update()
