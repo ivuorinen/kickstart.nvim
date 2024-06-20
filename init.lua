@@ -296,7 +296,11 @@ require('lazy').setup({
       },
       -- `neodev` configures Lua LSP for your Neovim config, runtime and plugins
       -- used for completion, annotations and signatures of Neovim apis
-      { 'folke/neodev.nvim', opts = {} },
+      {
+        'folke/lazydev.nvim',
+        ft = 'lua', -- only load on lua files
+        opts = {},
+      },
       'b0o/schemastore.nvim',
     },
     config = function()
