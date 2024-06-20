@@ -421,23 +421,26 @@ require('lazy').setup({
         -- :help lspconfig-all for all pre-configured LSPs
         actionlint = {}, -- GitHub Actions
         ansiblels = {}, -- Ansible
+        bashls = {}, -- Bash
         docker_compose_language_service = {}, -- Docker compose
+        dockerls = {}, -- Docker
         eslint = {}, -- ESLint
         gitlab_ci_ls = {}, -- GitLab CI
+        gopls = {}, -- Go
         grammarly = {}, -- Grammar and better writing
         html = {}, -- HTML
         intelephense = {}, -- PHP
         jinja_lsp = {}, -- Jinja templates
+        pyright = {}, -- Python
+        semgrep = {}, -- Security
         shellcheck = {}, -- Shell scripts
-        snyk_ls = {}, -- All
+        shfmt = {}, -- Shell scripts formatting
         stylua = {}, -- Used to format Lua code
         tailwindcss = {}, -- Tailwind CSS
         terraformls = {}, -- Terraform
+        tsserver = {}, -- TypeScript/JS
         typos_lsp = {}, -- Better writing
         yamlls = {}, -- YAML
-        gopls = {},
-        pyright = {},
-        tsserver = {},
 
         lua_ls = {
           -- cmd = {...},
