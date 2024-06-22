@@ -227,4 +227,12 @@ return {
   -- Neovim plugin for locking a buffer to a window
   -- https://github.com/stevearc/stickybuf.nvim
   { 'stevearc/stickybuf.nvim', opts = {} },
+  -- Zen mode for Neovim
+  -- https://githugb.com/folke/zen-mode.nvim
+  {
+    'folke/zen-mode.nvim',
+    keys = {
+      { '<leader>tz', '<cmd>ZenMode<cr>', desc = 'Toggle ZenMode' },
+    },
+  },
 }
