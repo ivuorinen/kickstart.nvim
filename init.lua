@@ -534,6 +534,7 @@ require('lazy').setup({
   },
 
   -- CoPilot
+  -- https://github.com/zbirenbaum/copilot.lua
   {
     'zbirenbaum/copilot.lua',
     cmd = 'Copilot',
@@ -547,6 +548,12 @@ require('lazy').setup({
         help = true,
       },
     },
+  },
+  {
+    'zbirenbaum/copilot-cmp',
+    config = function()
+      require('copilot_cmp').setup()
+    end,
   },
 
   { -- Autocompletion
@@ -637,7 +644,7 @@ require('lazy').setup({
           -- Manually trigger a completion from nvim-cmp.
           --  Generally you don't need this, because nvim-cmp will display
           --  completions whenever it has completion options available.
-          ['<C-Space>'] = cmp.mapping.complete {},
+          ['<M-Space>'] = cmp.mapping.complete {},
 
           -- Think of <c-l> as moving to the right of your snippet expansion.
           --  So if you have a snippet that's like:
