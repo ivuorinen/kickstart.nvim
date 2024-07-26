@@ -47,12 +47,9 @@ return {
     priority = 1001,
     init = function()
       local wk = require 'which-key'
-      wk.register {
+      wk.add {
         -- <leader>t = Toggle
-        ['<leader>tt'] = {
-          '<cmd>:lua require("dark_notify").toggle()<CR>',
-          'Toggle Dark Notify theme',
-        },
+        { '<leader>tt', '<cmd>:lua require("dark_notify").toggle()<CR>', desc = 'Toggle Dark Notify theme' },
       }
 
       local dn = require 'dark_notify'
@@ -73,16 +70,13 @@ return {
     init = function()
       local wk = require 'which-key'
 
-      wk.register {
-        ['<Leader>'] = {
-          c = {
-            b = { '<Cmd>CBccbox<CR>', 'CommentBox: Box Title' },
-            t = { '<Cmd>CBllline<CR>', 'CommentBox: Titled Line' },
-            l = { '<Cmd>CBline<CR>', 'CommentBox: Simple Line' },
-            m = { '<Cmd>CBllbox14<CR>', 'CommentBox: Marked' },
-            d = { '<Cmd>CBd<CR>', 'Remove a box' },
-          },
-        },
+      wk.add {
+        { '<leader>cb', group = 'CommentBox' },
+        { '<Leader>cbt', '<Cmd>CBccbox<CR>', desc = 'CommentBox: Box Title' },
+        { '<Leader>cbd', '<Cmd>CBd<CR>', desc = 'Remove a box' },
+        { '<Leader>cbl', '<Cmd>CBline<CR>', desc = 'CommentBox: Simple Line' },
+        { '<Leader>cbm', '<Cmd>CBllbox14<CR>', desc = 'CommentBox: Marked' },
+        { '<Leader>cbt', '<Cmd>CBllline<CR>', desc = 'CommentBox: Titled Line' },
       }
     end,
   },
@@ -139,7 +133,7 @@ return {
       }
     end,
     keys = {
-      { '<leader>tc', '<cmd>CloakToggle<cr>', desc = 'Toggle Cloak' },
+      { '<leader>tc', '<cmd>CloakToggle<cr>', desc = '[tc] Toggle Cloak' },
     },
   },
   -- Not UFO in the sky, but an ultra fold in Neovim.
@@ -232,7 +226,7 @@ return {
   {
     'folke/zen-mode.nvim',
     keys = {
-      { '<leader>tz', '<cmd>ZenMode<cr>', desc = 'Toggle ZenMode' },
+      { '<leader>tz', '<cmd>ZenMode<cr>', desc = '[tz] Toggle ZenMode' },
     },
   },
 }
