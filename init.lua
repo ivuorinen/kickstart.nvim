@@ -76,11 +76,13 @@ vim.opt.scrolloff = 10
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
+vim.keymap.set('n', '<leader>bc', '<cmd>bd<CR>', { desc = 'Close buffer' })
+
 -- Diagnostic keymaps
-vim.keymap.set('n', 'dk', vim.diagnostic.goto_prev, { desc = 'Go to previous [D]iagnostic message' })
-vim.keymap.set('n', 'dj', vim.diagnostic.goto_next, { desc = 'Go to next [D]iagnostic message' })
-vim.keymap.set('n', '<leader>be', vim.diagnostic.open_float, { desc = 'Show diagnostic [E]rror messages' })
-vim.keymap.set('n', '<leader>bq', vim.diagnostic.setloclist, { desc = 'Open diagnostic [Q]uickfix list' })
+vim.keymap.set('n', 'dk', vim.diagnostic.goto_prev, { desc = '[dk] Go to prev Diagnostic message' })
+vim.keymap.set('n', 'dj', vim.diagnostic.goto_next, { desc = '[dj] Go to next Diagnostic message' })
+vim.keymap.set('n', '<leader>be', vim.diagnostic.open_float, { desc = '[be] Show diagnostic Error messages' })
+vim.keymap.set('n', '<leader>bq', vim.diagnostic.setloclist, { desc = '[bq] Open diagnostic Quickfix list' })
 
 -- Exit terminal mode in the builtin terminal with a shortcut that is a bit easier
 -- for people to discover. Otherwise, you normally need to press <C-\><C-n>, which
@@ -107,7 +109,7 @@ vim.keymap.set('n', '<C-k>', '<C-w><C-k>', { desc = 'Move focus to the upper win
 
 -- Old habits
 vim.keymap.set('n', '<C-s>', '<cmd>w<CR>', { desc = 'Save file' })
-vim.keymap.set('n', '<leader>qq', '<cmd>wq!<CR>', { desc = 'Quickly Quit' })
+vim.keymap.set('n', '<leader>qq', '<cmd>wq!<CR>', { desc = '[qq] Quickly Quit' })
 
 -- [[ Basic Autocommands ]]
 --  See `:help lua-guide-autocommands`
@@ -438,7 +440,7 @@ require('lazy').setup({
         stylua = {}, -- Used to format Lua code
         tailwindcss = {}, -- Tailwind CSS
         terraformls = {}, -- Terraform
-        tsserver = {}, -- TypeScript/JS
+        ts_ls = {}, -- TypeScript/JS
         typos_lsp = {}, -- Better writing
         yamlls = {}, -- YAML
 
