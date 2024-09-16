@@ -424,6 +424,8 @@ require('lazy').setup({
         actionlint = {}, -- GitHub Actions
         ansiblels = {}, -- Ansible
         bashls = {}, -- Bash
+        css_variables = {}, -- CSS
+        cssls = {}, -- CSS
         docker_compose_language_service = {}, -- Docker compose
         dockerls = {}, -- Docker
         eslint = {}, -- ESLint
@@ -431,17 +433,24 @@ require('lazy').setup({
         gopls = {}, -- Go
         grammarly = {}, -- Grammar and better writing
         html = {}, -- HTML
+        htmx = {}, -- HTML extended
         intelephense = {}, -- PHP
         jinja_lsp = {}, -- Jinja templates
+        pest_ls = {}, -- Pest (PHP)
+        phpactor = {}, -- PHP
+        psalm = {}, -- PHP
         pyright = {}, -- Python
         semgrep = {}, -- Security
         shellcheck = {}, -- Shell scripts
         shfmt = {}, -- Shell scripts formatting
+        stylelint_lsp = {}, -- Stylelint for S/CSS
         stylua = {}, -- Used to format Lua code
         tailwindcss = {}, -- Tailwind CSS
         terraformls = {}, -- Terraform
+        tflint = {}, -- Terraform
         ts_ls = {}, -- TypeScript/JS
         typos_lsp = {}, -- Better writing
+        volar = {}, -- Vue
         yamlls = {}, -- YAML
 
         lua_ls = {
@@ -463,6 +472,16 @@ require('lazy').setup({
             json = {
               schemas = require('schemastore').json.schemas(),
               validate = { enable = true },
+            },
+            yaml = {
+              schemaStore = {
+                -- You must disable built-in schemaStore support if you want to use
+                -- this plugin and its advanced options like `ignore`.
+                enable = false,
+                -- Avoid TypeError: Cannot read properties of undefined (reading 'length')
+                url = '',
+              },
+              schemas = require('schemastore').yaml.schemas(),
             },
           },
         },
