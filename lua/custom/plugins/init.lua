@@ -7,6 +7,8 @@ return {
   -- https://github.com/christoomey/vim-tmux-navigator
   {
     'christoomey/vim-tmux-navigator',
+    lazy = false,
+    enabled = true,
     cmd = {
       'TmuxNavigateLeft',
       'TmuxNavigateDown',
@@ -26,6 +28,8 @@ return {
   -- https://github.com/bennypowers/nvim-regexplainer
   {
     'bennypowers/nvim-regexplainer',
+    lazy = false,
+    enabled = true,
     dependencies = {
       'nvim-treesitter/nvim-treesitter',
       'MunifTanjim/nui.nvim',
