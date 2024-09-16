@@ -433,7 +433,6 @@ require('lazy').setup({
         gopls = {}, -- Go
         grammarly = {}, -- Grammar and better writing
         html = {}, -- HTML
-        htmx = {}, -- HTML extended
         intelephense = {}, -- PHP
         jinja_lsp = {}, -- Jinja templates
         pest_ls = {}, -- Pest (PHP)
@@ -499,9 +498,35 @@ require('lazy').setup({
       -- for you, so that they are available from within Neovim.
       local ensure_installed = vim.tbl_keys(servers or {})
       vim.list_extend(ensure_installed, {
+        'actionlint',
+        'ansible-language-server',
         'ansible-lint',
         'bash-language-server',
+        'blade-formatter',
+        'cfn-lint',
+        'codeql',
+        'codespell',
+        'commitlint',
+        'diagnostic-languageserver',
+        'docker-compose-language-service',
+        'dockerfile-language-server',
         'editorconfig-checker',
+        'fixjson',
+        'flake8',
+        'html-lsp',
+        'jq',
+        'jsonlint',
+        'luacheck',
+        'nginx-language-server',
+        'php-cs-fixer',
+        'phpcs',
+        'phpmd',
+        'semgrep',
+        'shellcheck',
+        'shfmt',
+        'stylelint',
+        'stylua',
+        'yamllint',
       })
       require('mason-tool-installer').setup { ensure_installed = ensure_installed, auto_update = true }
 
