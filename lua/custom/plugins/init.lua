@@ -39,33 +39,6 @@ return {
       auto = true,
     },
   },
-  -- Toggle nvim color theme when macOS color scheme changes
-  -- https://github.com/cormacrelf/dark-notify
-  {
-    'cormacrelf/dark-notify',
-    dependencies = {
-      'folke/tokyonight.nvim',
-    },
-    lazy = false,
-    enabled = true,
-    priority = 1001,
-    init = function()
-      local wk = require 'which-key'
-      wk.add {
-        { '<leader>t', group = 'Toggle' },
-        { '<leader>tt', '<cmd>:lua require("dark_notify").toggle()<CR>', desc = 'Toggle Dark Notify theme' },
-      }
-
-      local dn = require 'dark_notify'
-      dn.run {
-        schemes = {
-          dark = 'tokyonight-storm',
-          light = 'tokyonight-day',
-        },
-      }
-      dn.update()
-    end,
-  },
   -- Clarify and beautify your comments using boxes and lines.
   -- https://github.com/LudoPinelli/comment-box.nvim
   {
