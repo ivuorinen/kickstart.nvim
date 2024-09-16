@@ -76,7 +76,7 @@ vim.opt.scrolloff = 10
 --  See `:help hlsearch`
 vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
 
-vim.keymap.set('n', '<leader>bc', '<cmd>bd<CR>', { desc = 'Close buffer' })
+vim.keymap.set('n', '<leader>dc', '<cmd>bd<CR>', { desc = 'Close buffer' })
 
 -- Diagnostic keymaps
 vim.keymap.set('n', 'dk', vim.diagnostic.goto_prev, { desc = '[dk] Go to prev Diagnostic message' })
